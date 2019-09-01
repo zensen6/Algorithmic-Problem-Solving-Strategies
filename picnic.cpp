@@ -15,9 +15,9 @@ int countParings(bool taken[10], int n){
         }
     }
     if(start == -1) return 1;
-    for(int i = 0; i < n; i++){
+    for(int i = start+1; i < n; i++){
 
-        if( i!=start && !taken[i] && arefriends[start][i] == true){
+        if(!taken[i] && arefriends[start][i] == true){
 
             taken[i] = taken[start] = true;
             ret+=countParings(taken, n);
